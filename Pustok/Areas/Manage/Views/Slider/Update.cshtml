@@ -1,0 +1,35 @@
+﻿@using Pustok.Models;
+@model Slider
+
+<div class="container-fluid">
+    <h1>UPDATE SLIDERS</h1>
+</div>
+
+<div class="container-fluid">
+
+    <form method="post">
+        <div class="form-group">
+            <label for="">Title</label>
+            <input asp-for="@Model.Title" type="text" class="form-control">
+
+        </div>
+        <div class="form-group">
+            <label for="">Description</label>
+            <input asp-for="@Model.Description" type=" text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">RedirctUrl</label>
+            <input asp-for="@Model.RedirctUrl" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">RedirctText</label>
+            <input asp-for="@Model.RedirctText" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">ImageUrl</label>
+            <input asp-for="@Model.ImageUrl" type=" text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">UPDATE</button>
+    </form>
+
+</div>
