@@ -30,7 +30,7 @@
                 <td>@item.Description</td>
                 <td>@item.RedirctUrl</td>
                 <td>@item.RedirctText</td>
-                <td>@(item.ImageUrl.Length > 20 ? item.ImageUrl.Substring(0,60) + "..." : item.ImageUrl)</td>
+                <td>@item.ImageUrl</td>
                 <td>
                     <a asp-controller="slider" asp-action="update" asp-route-id="@item.Id" class="btn btn-primary">Update</a>
                     <a asp-controller="slider" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>

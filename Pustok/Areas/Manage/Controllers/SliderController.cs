@@ -28,6 +28,36 @@ namespace Pustok.Areas.Manage.Controllers
         [HttpPost]
         public IActionResult Create(Slider slider)
         {
+            string fileName = slider.FormFile.FileName;
+            if (slider.FormFile.ContentType !="image/jpeg" &&  slider.FormFile.ContentType != "image/png")
+            {
+                ModelState.AddModelError("FormFile", "you can only add png or jpeg file");
+            }
+
+            if (slider.FormFile.Length> 1048576)
+            {
+                ModelState.AddModelError("FormFile", "file must be lower than 1 mb");
+            }
+            
+            if (slider.FormFile.FileName.Length>64)
+            {
+                fileName = fileName.Substring(fileName.Length - 64,64);
+            }
+
+            fileName = Guid.NewGuid().ToString() + fileName;
+            
+            string path = "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\" + fileName;
+            using (FileStream fileStream = new FileStream(path, FileMode.Create))
+            {
+                slider.FormFile.CopyTo(fileStream);
+            }
+
+
+            if (!ModelState.IsValid) return View(slider);
+
+            slider.ImageUrl = fileName;
+
+
             _slider.Sliders.Add(slider);
             _slider.SaveChanges();
 
@@ -43,18 +73,60 @@ namespace Pustok.Areas.Manage.Controllers
         [HttpPost]
         public IActionResult Update(Slider slider)
         {
-            var wanted = _slider.Sliders.FirstOrDefault(x => x.Id == slider.Id) ;
+            var wanted = _slider.Sliders.FirstOrDefault(x => x.Id == slider.Id);
+
+            if (wanted == null)
+            {
+                return NotFound();
+            }
+
+            string oldFilePath = "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\" + wanted.ImageUrl;
+
+            if (slider.FormFile != null)
+            {
+                
+                string newFileName = slider.FormFile.FileName;
+                if (slider.FormFile.ContentType != "image/jpeg" && slider.FormFile.ContentType != "image/png")
+                {
+                    ModelState.AddModelError("FormFile", "you can only add png or jpeg file");
+                }
+
+                if (slider.FormFile.Length > 1048576)
+                {
+                    ModelState.AddModelError("FormFile", "file must be lower than 1 mb");
+                }
+
+                if (slider.FormFile.FileName.Length > 64)
+                {
+                    newFileName = newFileName.Substring(newFileName.Length - 64, 64);
+                }
+
+                newFileName = Guid.NewGuid().ToString() + newFileName;
+
+                string newFilePath = "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\" + newFileName;
+                using (FileStream fileStream = new FileStream(newFilePath, FileMode.Create))
+                {
+                    slider.FormFile.CopyTo(fileStream);
+                }
+
+                if (System.IO.File.Exists(oldFilePath))
+                {
+                    System.IO.File.Delete(oldFilePath);
+                }
+
+                wanted.ImageUrl = newFileName; 
+            }
 
             wanted.Title = slider.Title;
             wanted.Description = slider.Description;
             wanted.RedirctText = slider.RedirctText;
             wanted.RedirctUrl = slider.RedirctUrl;
-            wanted.ImageUrl = slider.ImageUrl;
 
             _slider.SaveChanges();
 
             return RedirectToAction("Index");
         }
+
         [HttpGet]
         public IActionResult Delete(int id) 
         {
@@ -65,11 +137,25 @@ namespace Pustok.Areas.Manage.Controllers
         [HttpPost]
         public IActionResult Delete(Slider slider)
         {
-            var wanted = _slider.Sliders.FirstOrDefault(x => x.Id == slider.Id);
-            _slider.Sliders.Remove(wanted);
+            var sliderToDelete = _slider.Sliders.FirstOrDefault(x => x.Id == slider.Id);
+
+            if (sliderToDelete == null)
+            {
+                return NotFound();
+            }
+
+            string filePath = "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\" + sliderToDelete.ImageUrl;
+
+            if (System.IO.File.Exists(filePath))
+            {
+                System.IO.File.Delete(filePath);
+            }
+
+            _slider.Sliders.Remove(sliderToDelete);
             _slider.SaveChanges();
 
             return RedirectToAction("Index");
         }
+
     }
 }

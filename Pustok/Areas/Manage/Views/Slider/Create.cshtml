@@ -7,27 +7,31 @@
 
 <div class="container-fluid">
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="">Title</label>
+            <label asp-for="@Model.Title">Title</label>
             <input asp-for="@Model.Title" type="text" class="form-control" >
-            
+            <span asp-validation-for="@Model.Title"></span>
         </div>
         <div class="form-group">
-            <label for="">Description</label>
+            <label asp-for="@Model.Description">Description</label>
             <input asp-for="@Model.Description" type=" text" class="form-control">
+            <span asp-validation-for="@Model.Description"></span>
         </div>
         <div class="form-group">
-            <label for="">RedirctUrl</label>
+            <label asp-for="@Model.RedirctUrl">RedirctUrl</label>
             <input asp-for="@Model.RedirctUrl" type="text" class="form-control">
+            <span asp-validation-for="@Model.RedirctUrl"></span>
         </div>
         <div class="form-group">
-            <label for="">RedirctText</label>
+            <label asp-for="@Model.RedirctText">RedirctText</label>
             <input asp-for="@Model.RedirctText" type="text" class="form-control">
+            <span asp-validation-for="@Model.RedirctText"></span>
         </div>
         <div class="form-group">
-            <label for="">ImageUrl</label>
-            <input asp-for="@Model.ImageUrl" type=" text" class="form-control">
+            <label asp-for="@Model.FormFile">Image</label>
+            <input asp-for="@Model.FormFile"  class="form-control">
+            <span asp-validation-for="@Model.FormFile"></span>
         </div>
         <button type="submit" class="btn btn-primary">CREATE</button>
     </form>

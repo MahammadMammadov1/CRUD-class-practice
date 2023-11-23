@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\uploads\sliders\" />
     <Folder Include="wwwroot\vendor\bootstrap\scss\mixins\" />
     <Folder Include="wwwroot\vendor\fontawesome-free\webfonts\" />
   </ItemGroup>
