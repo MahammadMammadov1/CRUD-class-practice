@@ -28,34 +28,41 @@ namespace Pustok.Areas.Manage.Controllers
         [HttpPost]
         public IActionResult Create(Slider slider)
         {
-            string fileName = slider.FormFile.FileName;
-            if (slider.FormFile.ContentType !="image/jpeg" &&  slider.FormFile.ContentType != "image/png")
-            {
-                ModelState.AddModelError("FormFile", "you can only add png or jpeg file");
-            }
-
-            if (slider.FormFile.Length> 1048576)
-            {
-                ModelState.AddModelError("FormFile", "file must be lower than 1 mb");
-            }
-            
-            if (slider.FormFile.FileName.Length>64)
-            {
-                fileName = fileName.Substring(fileName.Length - 64,64);
-            }
-
-            fileName = Guid.NewGuid().ToString() + fileName;
-            
-            string path = "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\" + fileName;
-            using (FileStream fileStream = new FileStream(path, FileMode.Create))
-            {
-                slider.FormFile.CopyTo(fileStream);
-            }
-
-
             if (!ModelState.IsValid) return View(slider);
+            string fileName = "";
+            if (slider.FormFile!=null)
+            {
+                 fileName = slider.FormFile.FileName;
+                if (slider.FormFile.ContentType != "image/jpeg" && slider.FormFile.ContentType != "image/png")
+                {
+                    ModelState.AddModelError("FormFile", "you can only add png or jpeg file");
+                }
 
-            slider.ImageUrl = fileName;
+                if (slider.FormFile.Length > 1048576)
+                {
+                    ModelState.AddModelError("FormFile", "file must be lower than 1 mb");
+                }
+
+                if (slider.FormFile.FileName.Length > 64)
+                {
+                    fileName = fileName.Substring(fileName.Length - 64, 64);
+                }
+
+                fileName = Guid.NewGuid().ToString() + fileName;
+
+                string path = "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\" + fileName;
+                using (FileStream fileStream = new FileStream(path, FileMode.Create))
+                {
+                    slider.FormFile.CopyTo(fileStream);
+                }
+                slider.ImageUrl = fileName;
+            }
+            else
+            {
+                ModelState.AddModelError("FormFile", "image is required");
+            }
+
+            
 
 
             _slider.Sliders.Add(slider);
@@ -73,13 +80,13 @@ namespace Pustok.Areas.Manage.Controllers
         [HttpPost]
         public IActionResult Update(Slider slider)
         {
+            if (!ModelState.IsValid) return View(slider);
             var wanted = _slider.Sliders.FirstOrDefault(x => x.Id == slider.Id);
 
             if (wanted == null)
             {
                 return NotFound();
             }
-
             string oldFilePath = "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\" + wanted.ImageUrl;
 
             if (slider.FormFile != null)

@@ -2240,12 +2240,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\scss\_variables.scss))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\84610209-25ea-4a4e-aade-5d4d27ead9b44e6cec6672739cd31912005eeaab26e0.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\13a18ef3-b375-4855-ba59-8f88bd0143c14e6cec6672739cd31912005eeaab26e0.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Pustok</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Pustok</BasePath>
-      <RelativePath>uploads/sliders/84610209-25ea-4a4e-aade-5d4d27ead9b44e6cec6672739cd31912005eeaab26e0.jpg</RelativePath>
+      <RelativePath>uploads/sliders/13a18ef3-b375-4855-ba59-8f88bd0143c14e6cec6672739cd31912005eeaab26e0.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -2254,14 +2254,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\84610209-25ea-4a4e-aade-5d4d27ead9b44e6cec6672739cd31912005eeaab26e0.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\13a18ef3-b375-4855-ba59-8f88bd0143c14e6cec6672739cd31912005eeaab26e0.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\a3688886-d5c5-4b0c-bd59-c486fd55e0634e6cec6672739cd31912005eeaab26e0.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\ce608a25-c5e5-49ba-aec4-1ad8de0b4b22899f5dd0c9f47afa052d7fe6c3da12a0-1200x675-1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Pustok</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Pustok</BasePath>
-      <RelativePath>uploads/sliders/a3688886-d5c5-4b0c-bd59-c486fd55e0634e6cec6672739cd31912005eeaab26e0.jpg</RelativePath>
+      <RelativePath>uploads/sliders/ce608a25-c5e5-49ba-aec4-1ad8de0b4b22899f5dd0c9f47afa052d7fe6c3da12a0-1200x675-1.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -2270,7 +2270,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\a3688886-d5c5-4b0c-bd59-c486fd55e0634e6cec6672739cd31912005eeaab26e0.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\ce608a25-c5e5-49ba-aec4-1ad8de0b4b22899f5dd0c9f47afa052d7fe6c3da12a0-1200x675-1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\vendor\bootstrap\js\bootstrap.bundle.js))">
       <SourceType>Package</SourceType>

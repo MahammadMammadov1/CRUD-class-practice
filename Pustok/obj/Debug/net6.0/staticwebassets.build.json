@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Mw3bJ3YB0bzH1vkj5HJ6gyo6/18Ock1QO8x0/IIwvWE=",
+  "Hash": "aUI53r1VEtUneZrx5IX2q1BRRp/4s/yKklkfvUjbST4=",
   "Source": "Pustok",
   "BasePath": "_content/Pustok",
   "Mode": "Default",
@@ -2414,12 +2414,12 @@
       "OriginalItemSpec": "wwwroot\\scss\\utilities\\_text.scss"
     },
     {
-      "Identity": "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\84610209-25ea-4a4e-aade-5d4d27ead9b44e6cec6672739cd31912005eeaab26e0.jpg",
+      "Identity": "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\13a18ef3-b375-4855-ba59-8f88bd0143c14e6cec6672739cd31912005eeaab26e0.jpg",
       "SourceId": "Pustok",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\",
       "BasePath": "_content/Pustok",
-      "RelativePath": "uploads/sliders/84610209-25ea-4a4e-aade-5d4d27ead9b44e6cec6672739cd31912005eeaab26e0.jpg",
+      "RelativePath": "uploads/sliders/13a18ef3-b375-4855-ba59-8f88bd0143c14e6cec6672739cd31912005eeaab26e0.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2428,15 +2428,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\84610209-25ea-4a4e-aade-5d4d27ead9b44e6cec6672739cd31912005eeaab26e0.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\13a18ef3-b375-4855-ba59-8f88bd0143c14e6cec6672739cd31912005eeaab26e0.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\a3688886-d5c5-4b0c-bd59-c486fd55e0634e6cec6672739cd31912005eeaab26e0.jpg",
+      "Identity": "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\uploads\\sliders\\ce608a25-c5e5-49ba-aec4-1ad8de0b4b22899f5dd0c9f47afa052d7fe6c3da12a0-1200x675-1.jpg",
       "SourceId": "Pustok",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\",
       "BasePath": "_content/Pustok",
-      "RelativePath": "uploads/sliders/a3688886-d5c5-4b0c-bd59-c486fd55e0634e6cec6672739cd31912005eeaab26e0.jpg",
+      "RelativePath": "uploads/sliders/ce608a25-c5e5-49ba-aec4-1ad8de0b4b22899f5dd0c9f47afa052d7fe6c3da12a0-1200x675-1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2445,7 +2445,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\a3688886-d5c5-4b0c-bd59-c486fd55e0634e6cec6672739cd31912005eeaab26e0.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\ce608a25-c5e5-49ba-aec4-1ad8de0b4b22899f5dd0c9f47afa052d7fe6c3da12a0-1200x675-1.jpg"
     },
     {
       "Identity": "C:\\Users\\Mehemmed\\Desktop\\CRUD-class-practice\\Pustok\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js",

@@ -19,7 +19,7 @@ namespace Pustok.Models
         public string RedirctText { get; set; }
 
         [NotMapped]
-        public IFormFile FormFile { get; set; }
+        public IFormFile? FormFile { get; set; }
 
     }
 }
