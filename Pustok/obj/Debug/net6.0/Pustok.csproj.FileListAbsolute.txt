@@ -247,9 +247,6 @@ C:\Users\II Novbe\Desktop\TasksCode\Pustok\Pustok\obj\Debug\net6.0\refint\Pustok
 C:\Users\II Novbe\Desktop\TasksCode\Pustok\Pustok\obj\Debug\net6.0\Pustok.pdb
 C:\Users\II Novbe\Desktop\TasksCode\Pustok\Pustok\obj\Debug\net6.0\Pustok.genruntimeconfig.cache
 C:\Users\II Novbe\Desktop\TasksCode\Pustok\Pustok\obj\Debug\net6.0\ref\Pustok.dll
-C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\Pustok.dll
-C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\refint\Pustok.dll
-C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\Pustok.pdb
 C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\bin\Debug\net6.0\appsettings.json
 C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\bin\Debug\net6.0\Pustok.staticwebassets.runtime.json
@@ -494,5 +491,8 @@ C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\scopedcss\
 C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\scopedcss\bundle\Pustok.styles.css
 C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\scopedcss\projectbundle\Pustok.bundle.scp.css
 C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\Pustok.csproj.CopyComplete
+C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\Pustok.dll
+C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\refint\Pustok.dll
+C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\Pustok.pdb
 C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\Pustok.genruntimeconfig.cache
 C:\Users\Mehemmed\Desktop\CRUD-class-practice\Pustok\obj\Debug\net6.0\ref\Pustok.dll

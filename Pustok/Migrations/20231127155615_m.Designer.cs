@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pustok.DAL;
 
@@ -10,9 +11,10 @@ using Pustok.DAL;
 namespace Pustok.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231127155615_m")]
+    partial class m
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,29 +38,6 @@ namespace Pustok.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
-                });
-
-            modelBuilder.Entity("Pustok.Models.BookTag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("BookTags");
                 });
 
             modelBuilder.Entity("Pustok.Models.Genre", b =>
@@ -138,23 +117,6 @@ namespace Pustok.Migrations
                     b.ToTable("Sliders");
                 });
 
-            modelBuilder.Entity("Pustok.Models.Tag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tags");
-                });
-
             modelBuilder.Entity("PustokSliderCRUD.Models.Book", b =>
                 {
                     b.Property<int>("Id")
@@ -205,25 +167,6 @@ namespace Pustok.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("Pustok.Models.BookTag", b =>
-                {
-                    b.HasOne("PustokSliderCRUD.Models.Book", "Book")
-                        .WithMany("BookTags")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Pustok.Models.Tag", "Tag")
-                        .WithMany("BookTags")
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Book");
-
-                    b.Navigation("Tag");
-                });
-
             modelBuilder.Entity("PustokSliderCRUD.Models.Book", b =>
                 {
                     b.HasOne("Pustok.Models.Author", "Author")
@@ -251,16 +194,6 @@ namespace Pustok.Migrations
             modelBuilder.Entity("Pustok.Models.Genre", b =>
                 {
                     b.Navigation("Books");
-                });
-
-            modelBuilder.Entity("Pustok.Models.Tag", b =>
-                {
-                    b.Navigation("BookTags");
-                });
-
-            modelBuilder.Entity("PustokSliderCRUD.Models.Book", b =>
-                {
-                    b.Navigation("BookTags");
                 });
 #pragma warning restore 612, 618
         }
