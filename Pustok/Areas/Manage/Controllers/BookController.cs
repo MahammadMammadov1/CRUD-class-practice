@@ -33,6 +33,8 @@ namespace Pustok.Areas.Manage.Controllers
         {
             ViewBag.Authors = _appDb.Authors.ToList();
             ViewBag.Genres = _appDb.Genres.ToList();
+            ViewBag.Tags = _appDb.Tags.ToList();
+
             if (!ModelState.IsValid) return View(book);
             if (!_appDb.Authors.Any(x => x.Id == book.AuthorId))
             {
@@ -95,8 +97,10 @@ namespace Pustok.Areas.Manage.Controllers
         {
             ViewBag.Authors = _appDb.Authors.ToList();
             ViewBag.Genres = _appDb.Genres.ToList();
+            ViewBag.Tags = _appDb.Tags.ToList();
 
-            var existBook = _appDb.Books.FirstOrDefault(b => b.Id == book.Id);
+
+            var existBook = _appDb.Books.Include(x=> x.BookTags).FirstOrDefault(b => b.Id == book.Id);
             if (existBook == null) return NotFound();
             if (!ModelState.IsValid) return View(book);
             if (!_appDb.Authors.Any(x => x.Id == book.AuthorId))
@@ -110,35 +114,18 @@ namespace Pustok.Areas.Manage.Controllers
                 return View();
             }
 
-            var check = false;
-            if (book.TagIds != null)
+            existBook.BookTags.RemoveAll(bt => !book.TagIds.Contains(bt.TagId));
+
+            foreach (var tagId in book.TagIds.Where(tagId => !existBook.BookTags.Any(bt => bt.TagId == tagId)))
             {
-                foreach (var tagId in book.TagIds)
+                BookTag bookTag = new BookTag
                 {
-                    if (!_appDb.Tags.Any(x => x.Id == tagId))
-                        check = true;
-                }
+                    TagId = tagId
+                };
+                existBook.BookTags.Add(bookTag);
             }
-            if (check)
-            {
-                ModelState.AddModelError("TagId", "Tag not found!");
-                return View(book);
-            }
-            else
-            {
-                if (book.TagIds != null)
-                {
-                    foreach (var tagId in book.TagIds)
-                    {
-                        BookTag bookTag = new BookTag
-                        {
-                            Book = book,
-                            TagId = tagId
-                        };
-                        _appDb.BookTags.Add(bookTag);
-                    }
-                }
-            }
+
+
             existBook.Name = book.Name;
             existBook.Description = book.Description;
             existBook.CostPrice = book.CostPrice;

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Pustok\\Areas"
+    "\\Pustok\\Areas",
+    "\\Pustok\\Areas\\Manage",
+    "\\Pustok\\Areas\\Manage\\Controllers"
   ],
   "SelectedNode": "\\Pustok.sln",
   "PreviewInSolutionExplorer": false
